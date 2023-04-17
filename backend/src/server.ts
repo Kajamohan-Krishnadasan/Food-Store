@@ -1,13 +1,18 @@
 import dotenv from "dotenv";
 dotenv.config();
+
 import path from "path";
 import express from "express";
 import cors from "cors";
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 // import { sampleFood, sampleTags, sampleUsers } from "./data";
 import foodRouter from "./routers/food.router";
 import userRouter from "./routers/user.router";
 import orderRouter from "./routers/order.router";
+
+import { dbConnect } from "./configs/database.config";
+
+dbConnect();
 
 const app = express();
 const port = 5000;
@@ -28,9 +33,6 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 
 app.use(express.static("public"));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
 
 app.get("/", (req, res) => {
   res.send("Getting Request works! ");
@@ -128,5 +130,5 @@ app.get("/", (req, res) => {
 // };
 
 app.listen(port, () => {
-  console.log("Server is running on port 5000");
+  console.log("Server is running on port http://localhost:5000");
 });

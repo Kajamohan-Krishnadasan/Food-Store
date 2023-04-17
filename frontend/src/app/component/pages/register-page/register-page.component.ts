@@ -8,7 +8,7 @@ import { PasswordsMatchValidator } from 'src/app/shared/validators/password_matc
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.css'],
+  styleUrls: ['./register-page.component.scss'],
 })
 export class RegisterPageComponent implements OnInit {
   registerForm!: FormGroup;
@@ -47,7 +47,9 @@ export class RegisterPageComponent implements OnInit {
     this.isSubmitted = true;
     if (this.registerForm.invalid) return;
 
+    // form values
     const fv = this.registerForm.value;
+
     const user: IUserRegister = {
       name: fv.name,
       email: fv.email,

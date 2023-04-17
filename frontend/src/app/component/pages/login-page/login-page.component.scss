@@ -2,3 +2,30 @@
   padding: 0.3rem 0.4rem;
   width: fit-content;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.details {
+  width: 28rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-list {
+  color: red;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

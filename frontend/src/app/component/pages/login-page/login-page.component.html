@@ -1,53 +1,30 @@
 <div class="container-sm d-flex flex-column mt-3">
   <app-title title="Login"></app-title>
+
   <form [formGroup]="loginForm" (submit)="submit()">
-    <div class="mb-3 row">
-      <label for="Email" class="col-sm-2 col-form-label">Email</label>
-      <div class="col-sm-10">
-        <input
-          type="Email"
-          class="form-control"
-          id="Email"
-          formControlName="email"
-        />
-        <div
-          class="alert alert-danger mt-2"
-          *ngIf="fc.email.errors && isSubmitted"
-        >
-          <div *ngIf="fc.email.errors.required">
-            <i class="bi bi-info-circle"></i>
-            Should not be Empty
-          </div>
+    <text-input
+      [control]="fc.email"
+      [showErrorsWhen]="isSubmitted"
+      type="email"
+      label="Email"
+    >
+    </text-input>
 
-          <div *ngIf="fc.email.errors.email">
-            <i class="bi bi-info-circle"></i>
-            Email format is invalid
-          </div>
-        </div>
-      </div>
-    </div>
+    <text-input
+      [control]="fc.password"
+      [showErrorsWhen]="isSubmitted"
+      type="password"
+      label="Password"
+    >
+    </text-input>
 
-    <div class="mb-3 row">
-      <label for="Password" class="col-sm-2 col-form-label"> Password </label>
-      <div class="col-sm-10">
-        <input
-          type="password"
-          class="form-control"
-          id="Password"
-          formControlName="password"
-        />
-        <div
-          class="alert alert-danger mt-2"
-          *ngIf="fc.password.errors && isSubmitted"
-        >
-          <div *ngIf="fc.password.errors.required">
-            <i class="bi bi-info-circle"></i> Should not be Empty
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Login</button>
+    <default-button text="Login"></default-button>
+
+    <div class="register">
+      Don't have an account? &nbsp;
+      <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }">
+        Register Here
+      </a>
     </div>
   </form>
 </div>

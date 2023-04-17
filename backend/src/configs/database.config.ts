@@ -5,7 +5,7 @@ export const dbConnect = () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   } as ConnectOptions).then(
-    () => console.log("connect successfully"),
+    () => console.log("connect successfully", process.env.MONGO_URI),
     (error) => console.log(error)
   );
 };

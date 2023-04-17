@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
-@import url("../node_modules/ngx-toastr/toastr.css");
+@import url("../node_modules/ngx-toastr/toastr.scss");
+@import url("../node_modules/leaflet/dist/leaflet.scss");
 
 * {
   box-sizing: border-box;

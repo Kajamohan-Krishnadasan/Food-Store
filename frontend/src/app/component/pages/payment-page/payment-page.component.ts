@@ -6,24 +6,21 @@ import { Order } from 'src/app/shared/models/Order';
 @Component({
   selector: 'app-payment-page',
   templateUrl: './payment-page.component.html',
-  styleUrls: ['./payment-page.component.css']
+  styleUrls: ['./payment-page.component.scss'],
 })
 export class PaymentPageComponent implements OnInit {
+  order: Order = new Order();
 
-  order:Order = new Order();
   constructor(orderService: OrderService, router: Router) {
-      orderService.getNewOrderForCurrentUser().subscribe({
-        next: (order) => {
-          this.order = order;
-        },
-        error:() => {
-          router.navigateByUrl('/chekcout');
-        }
-      })
-
-   }
-
-  ngOnInit(): void {
+    orderService.getNewOrderForCurrentUser().subscribe({
+      next: (order) => {
+        this.order = order;
+      },
+      error: () => {
+        router.navigateByUrl('/chekcout');
+      },
+    });
   }
 
+  ngOnInit(): void {}
 }
