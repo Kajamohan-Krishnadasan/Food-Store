@@ -1,0 +1,17 @@
+<div class="container-sm px-5 mt-3 mb-2">
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search Food"
+      #FoodName
+      (onchange)="search(FoodName.value)"
+      (keyup.enter)="search(FoodName.value)"
+      [value]="searchFood"
+    />
+
+    <button class="btn btn-danger" (click)="search(FoodName.value)">
+      Search
+    </button>
+  </div>
+</div>

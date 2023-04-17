@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex gap-2 flex-wrap" *ngIf="tags">
+      <a class="tag" *ngFor="let tag of tags" routerLink="/tags/{{ tag.name }}">
+        {{ tag.name }} ({{ tag.count }})
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+header {
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid #e72929;
+
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: #af1313;
+
+      &:hover {
+        background: #e72929;
+        color: white;
+        cursor: pointer;
+      }
+
+      &.logo {
+        font-weight: bold;
+        padding: 1rem;
+      }
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+
+      a {
+        padding: 1rem;
+        display: inline-block;
+
+        span {
+          background: #ff4d4d;
+          color: white;
+          padding: 0.1rem 0.45rem;
+          border-radius: 50%;
+          font-size: 0.9rem;
+        }
+      }
+
+      .menu-container {
+        position: relative;
+        z-index: 10;
+
+        &:hover .menu {
+          display: block;
+        }
+
+        .menu {
+          position: absolute;
+          z-index: 1;
+          background-color: whitesmoke;
+          display: none;
+
+          a {
+            width: 100%;
+            min-width: 8rem;
+          }
+        }
+      }
+    }
+  }
+}

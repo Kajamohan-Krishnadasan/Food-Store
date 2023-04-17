@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+@import url("../node_modules/ngx-toastr/toastr.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+
+  button {
+    font-size: 16px;
+    font-family: "Quicksand", sans-serif;
+  }
+  body {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
